@@ -1,0 +1,2 @@
+class PicturePart < ApplicationRecord
+end
