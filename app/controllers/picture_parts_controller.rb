@@ -10,24 +10,32 @@ class PicturePartsController < ApplicationController
 
   # GET /picture_parts/1
   def show
-    render json: @picture_part
+    @picture_part
+  end
+
+  # GET /picture_parts/random
+  def random
+    picture_size = 3
+    PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_url: nil).empty?
+
+    @picture_part = PicturePart.where(image_url: nil).first
   end
 
   # POST /picture_parts
-  def create
-    @picture_part = PicturePart.new(picture_part_params)
+  #def create
+  #  @picture_part = PicturePart.new(picture_part_params)
 
-    if @picture_part.save
-      render json: @picture_part, status: :created, location: @picture_part
-    else
-      render json: @picture_part.errors, status: :unprocessable_entity
-    end
-  end
+  #  if @picture_part.save
+  #    render json: @picture_part, status: :created, location: @picture_part
+  #  else
+  #    render json: @picture_part.errors, status: :unprocessable_entity
+  #  end
+  #end
 
   # PATCH/PUT /picture_parts/1
   def update
     if @picture_part.update(picture_part_params)
-      render json: @picture_part
+      @picture_part
     else
       render json: @picture_part.errors, status: :unprocessable_entity
     end
@@ -46,6 +54,6 @@ class PicturePartsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def picture_part_params
-      params.require(:picture_part).permit(:url, :picture_size, :order, :top_left_x, :top_right_x, :bottom_left_x, :bottom_right_x)
+      params.require(:picture_part).permit(:image_url, :picture_size, :picture_order, :top_left_x, :top_right_x, :bottom_left_x, :bottom_right_x)
     end
 end
