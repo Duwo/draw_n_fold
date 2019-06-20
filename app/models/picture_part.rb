@@ -1,5 +1,5 @@
 class PicturePart < ApplicationRecord
-  mount_uploaders :image_part, ImagePartUploader
+  mount_uploader :image_part, ImagePartUploader
 
   def self.generate_new_parts(picture_size)
     picture_size.times do |order|

@@ -16,9 +16,9 @@ class PicturePartsController < ApplicationController
   # GET /picture_parts/random
   def random
     picture_size = 3
-    PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_url: nil).empty?
+    PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_part: nil).empty?
 
-    @picture_part = PicturePart.where(image_url: nil).first
+    @picture_part = PicturePart.where(image_part: nil).first
   end
 
   # POST /picture_parts
@@ -54,6 +54,6 @@ class PicturePartsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def picture_part_params
-      params.require(:picture_part).permit(:image_url, :picture_size, :picture_order, :top_left_x, :top_right_x, :bottom_left_x, :bottom_right_x)
+      params.require(:picture_part).permit(:image_part, :picture_size, :picture_order, :top_left_x, :top_right_x, :bottom_left_x, :bottom_right_x)
     end
 end
