@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_200244) do
+ActiveRecord::Schema.define(version: 2019_06_20_220437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "picture_parts", force: :cascade do |t|
-    t.string "image_url"
     t.integer "picture_size"
     t.integer "picture_order"
     t.decimal "top_left_x"
@@ -26,13 +25,14 @@ ActiveRecord::Schema.define(version: 2019_06_20_200244) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "picture_id"
+    t.string "image_part"
     t.index ["picture_id"], name: "index_picture_parts_on_picture_id"
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   add_foreign_key "picture_parts", "pictures"
