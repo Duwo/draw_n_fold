@@ -1,0 +1,20 @@
+# packages in environment at /usr/local/anaconda3/envs/draw_n_fold:
+#
+# Name                    Version                   Build  Channel
+ca-certificates           2019.6.16            hecc5488_0    conda-forge
+icu                       58.2              h0a44026_1000    conda-forge
+krb5                      1.16.3            hcfa6398_1001    conda-forge
+libcxx                    8.0.0                         2    conda-forge
+libcxxabi                 8.0.0                         2    conda-forge
+libedit                   3.1.20170329      hcfe32e1_1001    conda-forge
+libiconv                  1.15              h01d97ff_1005    conda-forge
+libpq                     11.3                 h56406e1_0    conda-forge
+libxml2                   2.9.9                hd80cff7_0    conda-forge
+ncurses                   6.1               h0a44026_1002    conda-forge
+openssl                   1.1.1b               h01d97ff_2    conda-forge
+postgresql                11.3                 hf10c77c_0    conda-forge
+readline                  7.0               hcfe32e1_1001    conda-forge
+tk                        8.6.9             h2573ce8_1002    conda-forge
+tzcode                    2019a             h01d97ff_1002    conda-forge
+xz                        5.2.4             h1de35cc_1001    conda-forge
+zlib                      1.2.11            h1de35cc_1004    conda-forge
