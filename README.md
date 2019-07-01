@@ -1,4 +1,4 @@
-![Draw And Fold](logo-800.png)
+![Draw And Fold](logo-500.png)
 
 ### Setup instructions
 
