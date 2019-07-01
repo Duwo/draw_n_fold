@@ -1,24 +1,27 @@
-# README
+![Draw And Fold](logo-800.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install Ruby 2.6.3 with Rbenv or Asdf
 
-Things you may want to cover:
+Install requirements for Postgres in a Conda environment or run it on your
+local machine
 
-* Ruby version
+install bundler in your ruby environment
 
-* System dependencies
+gem install bundler
 
-* Configuration
+install gems in a local bundle with
 
-* Database creation
+bundle install --path .bundle
 
-* Database initialization
+start postgres service
 
-* How to run the test suite
+set up database with
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle exec rails db:create
+bundle exec rails db:migrate
 
-* Deployment instructions
+Start rails app with
+bundle exec rails s
 
-* ...
+It should run on localhost:3000
+
