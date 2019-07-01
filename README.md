@@ -1,5 +1,7 @@
 ![Draw And Fold](logo-800.png)
 
+### Setup instructions
+
 * Install Rbenv or Asdf
 * Install Ruby 2.6.3 with Rbenv or Asdf
 * Install requirements for Postgres in a Conda environment or run it on your local machine
