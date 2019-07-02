@@ -1,9 +1,11 @@
 class Picture < ApplicationRecord
   mount_uploader :image, ImageUploader
+  has_many :picture_parts
 
-  def is_done
-  	return false #TODO: add something that iterates through parts and returns false if it finds one with image_part=null. 
+  def self.generate_picture(picture_size)
+    picture = Picture.new
+    PicturePart.generate_parts(picture, picture_size)
+    return picture
   end
-
 end
 

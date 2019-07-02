@@ -13,9 +13,11 @@ class PicturePartsController < ApplicationController
 
   # GET /picture_parts/random
   def random
-    picture_size = 3
-    PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_part: nil).empty?
-    @picture_part = PicturePart.where(image_part: nil).first
+    if PicturePart.random_unfinished.nil?
+      Picture.generate_picture(3)
+    end
+    
+    @picture_part = PicturePart.random_unfinished
   end
 
   # POST /picture_parts
