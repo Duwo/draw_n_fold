@@ -17,7 +17,6 @@ class PicturePartsController < ApplicationController
     PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_part: nil).empty?
     @picture_part = PicturePart.where(image_part: nil).first
   end
-  
 
   # POST /picture_parts
   #def create
