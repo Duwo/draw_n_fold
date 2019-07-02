@@ -8,14 +8,13 @@ class PicturePartsController < ApplicationController
 
   # GET /picture_parts/1
   def show
-    @picture_part 
+    @picture_part
   end
 
   # GET /picture_parts/random
   def random
     picture_size = 3
     PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_part: nil).empty?
-
     @picture_part = PicturePart.where(image_part: nil).first
   end
   
