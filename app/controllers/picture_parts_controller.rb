@@ -4,13 +4,11 @@ class PicturePartsController < ApplicationController
   # GET /picture_parts
   def index
     @picture_parts = PicturePart.all
-
-    render json: @picture_parts
   end
 
   # GET /picture_parts/1
   def show
-    @picture_part
+    @picture_part 
   end
 
   # GET /picture_parts/random
@@ -20,6 +18,7 @@ class PicturePartsController < ApplicationController
 
     @picture_part = PicturePart.where(image_part: nil).first
   end
+  
 
   # POST /picture_parts
   #def create
