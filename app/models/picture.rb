@@ -13,15 +13,18 @@ class Picture < ApplicationRecord
   end
 
 
-  def combine 
-  	image_list = Magick::ImageList.new
+  def combine
+    image_list = Magick::ImageList.new
   	picture_parts.each do |part|
-  		image_list << Magick::Image.read(part.image_part.url) 
+      image_list.push(Magick::Image.read("#{CarrierWave.root}/#{part.image_part.url}").first)
   	end
 
-  	image_list.write("combine.png")
-  	image = "combine.png"
+    image_list.append(true).write("combine.png")
+    File.open('combine.png') do |f|
+      self.image = f
+    end
 
+    save!
   end
 
 end
