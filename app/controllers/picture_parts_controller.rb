@@ -4,8 +4,6 @@ class PicturePartsController < ApplicationController
   # GET /picture_parts
   def index
     @picture_parts = PicturePart.all
-
-    render json: @picture_parts
   end
 
   # GET /picture_parts/1
@@ -17,7 +15,6 @@ class PicturePartsController < ApplicationController
   def random
     picture_size = 3
     PicturePart.generate_new_parts(picture_size) if PicturePart.where(image_part: nil).empty?
-
     @picture_part = PicturePart.where(image_part: nil).first
   end
 
